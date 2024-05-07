@@ -15,6 +15,10 @@ Now let's create the service account we will be acting as for this exercise:
 
 `gcloud iam service-accounts create bucket-service-account --description="A service account for demonstrating IAM permissions on GCS Buckets." --display-name="Bucket IAM Test"`
 
+and give ourselves the ability to act as this service account
+
+`gcloud iam service-accounts add-iam-policy-binding bucket-service-account@PROJECT_ID.iam.gserviceaccount.com --member=user:YOUR_EMAIL --role="roles/iam.serviceAccountTokenCreator`
+
 Now let's attempt to access the file:
 
 `gcloud storage cat gs://BUCKET_NAME/hello_world.txt --impersonate-service-account=bucket-service-account@PROJECT_ID.iam.gserviceaccount.com`
