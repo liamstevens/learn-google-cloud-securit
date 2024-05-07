@@ -25,7 +25,7 @@ Now let's attempt to access the file:
 
 You receive an error back:
 
-`ERROR: (gcloud.storage.cat) HTTPError 403: test-service-account@valent-core.iam.gserviceaccount.com does not have storage.objects.get access to the Google Cloud Storage object. Permission 'storage.objects.get' denied on resource (or it may not exist).`
+`ERROR: (gcloud.storage.cat) HTTPError 403: test-service-account@PROJECT_ID.iam.gserviceaccount.com does not have storage.objects.get access to the Google Cloud Storage object. Permission 'storage.objects.get' denied on resource (or it may not exist).`
 
 Now let's try giving permissions:
 
