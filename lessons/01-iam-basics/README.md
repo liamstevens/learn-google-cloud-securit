@@ -4,11 +4,12 @@ Follow along with the below commands to complete the exercise. Make sure to repl
 
 First, let's make the bucket - make sure to give it a unique name as Google Cloud Storage bucket names must be globally unique:
 
-`gcloud storage buckets create BUCKET_NAME --location=us-central1`
+`gcloud storage buckets create gs://BUCKET_NAME --location=us-central1`
 
 Then let's make a dummy file and place it in the bucket:
 
 `echo "Hello world" > hello_world.txt`
+
 `gcloud storage cp hello_world.txt gs://BUCKET_NAME/hello_world.txt`
 
 Now let's create the service account we will be acting as for this exercise:
@@ -41,5 +42,5 @@ Success!
 
 Now, let's tidy up:
 
-`gcloud storage buckets delete gs://BUCKET_NAME`
+`gcloud storage rm --recursive gs://BUCKET_NAME`
 `gcloud iam service accounts delete bucket-service-account`
